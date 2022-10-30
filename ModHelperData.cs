@@ -6,7 +6,7 @@ public static class ModHelperData
     public const string Name = "Boss Rounds";
 
     public const string Description =
-        "Adds Round Sets for all Bosses and their Elite versions chooseable in the Rount Set Changer, " +
+        "Adds Round Sets for all Bosses and their Elite versions chooseable in the Round Set Changer, " +
         "allowing you to play any boss on any map at any time. " +
         "Sandbox also works, allowing you to test Bosses by sending their corresponding rounds.\n\n" +
         "You DO NOT receive the usual boss rewards / trophies for playing, " +

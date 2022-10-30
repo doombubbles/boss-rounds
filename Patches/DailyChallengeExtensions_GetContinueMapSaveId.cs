@@ -13,7 +13,7 @@ internal static class DailyChallengeExtensions_GetContinueMapSaveId
     [HarmonyPrefix]
     private static bool Prefix(ChallengeType chalType, ref string __result)
     {
-        if (chalType == ChallengeType.BossBloon && InGameData.CurrentGame.gameEventId == BossRoundsMod.EventId)
+        if (chalType == ChallengeType.BossBloon && InGameData.CurrentGame?.gameEventId == BossRoundsMod.EventId)
         {
             __result = InGameData.CurrentGame.selectedMap;
             return false;

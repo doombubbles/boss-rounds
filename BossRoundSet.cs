@@ -23,7 +23,10 @@ public class BossRoundSet : ModRoundSet
 
     public override string Name => (elite ? "Elite" : "") + bossType;
 
-    public override string Icon => VanillaSprites.ByName[bossType + "Btn" + (elite ? "Elite" : "")];
+    public override string Icon =>
+        VanillaSprites.ByName.TryGetValue(bossType + "Btn" + (elite ? "Elite" : ""), out var icon)
+            ? icon
+            : VanillaSprites.WoodenRoundButton;
 
     // ReSharper disable once UnusedMember.Global gotta have empty constructor for any ModContent
     public BossRoundSet()

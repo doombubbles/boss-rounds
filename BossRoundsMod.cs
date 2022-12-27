@@ -1,11 +1,12 @@
-using Assets.Scripts.Unity.Menu;
-using Assets.Scripts.Unity.UI_New.Main.DifficultySelect;
-using Assets.Scripts.Unity.UI_New.Main.ModeSelect;
+using Il2CppAssets.Scripts.Unity.Menu;
+using Il2CppAssets.Scripts.Unity.UI_New.Main.DifficultySelect;
+using Il2CppAssets.Scripts.Unity.UI_New.Main.ModeSelect;
 using MelonLoader;
 using BTD_Mod_Helper;
 using BossRounds;
 using BTD_Mod_Helper.Extensions;
 using BTD_Mod_Helper.UI.Modded;
+using Il2Cpp;
 
 [assembly: MelonInfo(typeof(BossRoundsMod), ModHelperData.Name, ModHelperData.Version, ModHelperData.RepoOwner)]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]

@@ -1,10 +1,10 @@
-﻿using Assets.Scripts.Data;
-using Assets.Scripts.Models;
-using Assets.Scripts.Models.Difficulty;
-using Assets.Scripts.Unity;
-using Assets.Scripts.Unity.Menu;
-using Assets.Scripts.Unity.UI_New.InGame;
-using Assets.Scripts.Unity.UI_New.Main.DifficultySelect;
+﻿using Il2CppAssets.Scripts.Data;
+using Il2CppAssets.Scripts.Models;
+using Il2CppAssets.Scripts.Models.Difficulty;
+using Il2CppAssets.Scripts.Unity;
+using Il2CppAssets.Scripts.Unity.Menu;
+using Il2CppAssets.Scripts.Unity.UI_New.InGame;
+using Il2CppAssets.Scripts.Unity.UI_New.Main.DifficultySelect;
 using BTD_Mod_Helper.Api.Helpers;
 using BTD_Mod_Helper.Extensions;
 using BTD_Mod_Helper.UI.Modded;

@@ -1,5 +1,5 @@
-﻿using Assets.Scripts.Unity.UI_New.GameOver;
-using Assets.Scripts.Unity.UI_New.InGame;
+﻿using Il2CppAssets.Scripts.Unity.UI_New.GameOver;
+using Il2CppAssets.Scripts.Unity.UI_New.InGame;
 using HarmonyLib;
 
 namespace BossRounds.Patches;

@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
-using Assets.Scripts.Unity.Player;
-using Assets.Scripts.Unity.UI_New.InGame;
+using Il2CppAssets.Scripts.Unity.Player;
+using Il2CppAssets.Scripts.Unity.UI_New.InGame;
 using HarmonyLib;
 
 namespace BossRounds.Patches;

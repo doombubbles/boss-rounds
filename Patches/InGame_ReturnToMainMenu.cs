@@ -1,5 +1,5 @@
-﻿using Assets.Scripts.Unity.Bridge;
-using Assets.Scripts.Unity.UI_New.InGame;
+﻿using Il2CppAssets.Scripts.Unity.Bridge;
+using Il2CppAssets.Scripts.Unity.UI_New.InGame;
 using HarmonyLib;
 
 namespace BossRounds.Patches;

@@ -1,4 +1,4 @@
-using Assets.Scripts.Simulation.Track;
+using Il2CppAssets.Scripts.Simulation.Track;
 using HarmonyLib;
 
 namespace BossRounds.Patches;

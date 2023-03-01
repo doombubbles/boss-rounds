@@ -1,1 +1,1 @@
-- Fixed InGame_ReturnToMainMenu patch 
+- Fixed crash on boss defeat screen

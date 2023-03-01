@@ -32,16 +32,13 @@ internal static class BossDefeatScreen_Open
             leaderboardStandings = new List<BossLeaderboardStanding>(),
             hasClaimedRewards = true
         };
-        
-        if (Game.Player.Data.GetSavedMap(InGameData.CurrentGame.selectedMap, out var map))
-        {
-            
-        }
-        else
-        {
-            ModHelper.Msg<BossRoundsMod>("No saved map :thinking:");
-        }
 
+        var lastRound = InGame.instance.GetLastRoundMapSaveData();
+        if (lastRound != null)
+        {
+            __instance.retryMapSave = lastRound;
+            __instance.canRetry = true;
+        }
     }
 
     [HarmonyPostfix]

@@ -1,1 +1,1 @@
-- Fixed crash on boss defeat screen
+- Fixed for BTD6 v36.0

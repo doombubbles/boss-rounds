@@ -10,8 +10,8 @@ namespace BossRounds.Patches;
 internal static class InGame_RemoveCurrentMapSave
 {
     [HarmonyPrefix]
-    private static bool Prefix(bool fromDefeat)
+    private static bool Prefix(bool canClearCheckpoints)
     {
-        return !(fromDefeat && InGameData.CurrentGame.gameEventId == BossRoundsMod.EventId);
+        return !(canClearCheckpoints && InGameData.CurrentGame.gameEventId == BossRoundsMod.EventId);
     }
 }

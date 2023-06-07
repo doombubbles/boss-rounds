@@ -25,9 +25,9 @@ internal static class BossDefeatScreen_Open
         Game.Player.Data._CurrentBossEventData_k__BackingField = new BossEventData
         {
             elite = new BossModeData
-                { bestRound = 69, hasCompleted = true, seenCompletion = true, tierBeaten = 5, newBestRound = false },
+                { hasCompleted = true, seenCompletion = true, tierBeaten = 5, newBestRound = false },
             normal = new BossModeData
-                { bestRound = 69, hasCompleted = true, seenCompletion = true, tierBeaten = 5, newBestRound = false },
+                { hasCompleted = true, seenCompletion = true, tierBeaten = 5, newBestRound = false },
             eventId = BossRoundsMod.EventId,
             leaderboardStandings = new List<BossLeaderboardStanding>(),
             hasClaimedRewards = true

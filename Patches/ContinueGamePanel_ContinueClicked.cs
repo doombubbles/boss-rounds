@@ -31,7 +31,7 @@ internal static class ContinueGamePanel_ContinueClicked
                     difficulty = map.mapDifficulty,
                     map = map.mapName,
                     mode = map.modeName
-                });
+                }, LeaderboardScoringType.GameTime);
 
             ModHelper.Msg<BossRoundsMod>("It's boss time again!");
         }

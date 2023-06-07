@@ -22,7 +22,7 @@ public class BossRoundsMod : BloonsTD6Mod
     public BossRoundSet? SelectedSet { get; private set; }
 
     // Not really much point in making these settings lol, people would just abuse it even more
-    public const int BaseMonkeyMoneyBonus = 400;
+    public const int BaseMonkeyMoneyBonus = 300;
     public const float MapModeMonkeyMoneyMult = .5f;
     public const float EliteMonkeyMoneyMult = 2;
 

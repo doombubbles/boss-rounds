@@ -27,7 +27,7 @@ internal static class Game_GetMonkeyMoneyReward
         {
             elite = data.bossData.bossEliteMode;
         }
-        else if (InGame.instance == null &&
+        else if (InGame.instance == null && RoundSetChanger.RoundSetOverride != null &&
                  BossRoundSet.Cache.TryGetValue(RoundSetChanger.RoundSetOverride, out var bossRoundset))
         {
             elite = bossRoundset.elite;
@@ -36,8 +36,7 @@ internal static class Game_GetMonkeyMoneyReward
 
         var totalBonus = (float) CostHelper.CostForDifficulty(BossRoundsMod.BaseMonkeyMoneyBonus, difficulty);
 
-        var mapDifficulty = GameData.Instance.mapSet.GetDifficulty(map);
-        var mapMoney = useModel.GetMonkeyMoneyReward(difficulty, mapDifficulty.ToString());
+        var mapMoney = useModel.monkeyMoneyReward;
         if (mode == ModeType.Impoppable)
         {
             mapMoney *= 1.5f;

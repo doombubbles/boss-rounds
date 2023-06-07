@@ -31,7 +31,7 @@ internal static class ModeScreen_OnModeSelected
                         new() { isHero = true, tower = DailyChallengeModel.CHOSENPRIMARYHERO, max = 1 }
                     }
                     .ToIl2CppList()
-            });
+            }, LeaderboardScoringType.GameTime);
 
         ModHelper.Msg<BossRoundsMod>("It's boss time!");
     }

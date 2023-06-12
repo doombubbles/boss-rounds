@@ -1,7 +1,8 @@
-﻿using System.Reflection;
+﻿using System.Collections.Generic;
+using System.Reflection;
+using HarmonyLib;
 using Il2CppAssets.Scripts.Unity.Player;
 using Il2CppAssets.Scripts.Unity.UI_New.InGame;
-using HarmonyLib;
 
 namespace BossRounds.Patches;
 
@@ -11,7 +12,7 @@ namespace BossRounds.Patches;
 [HarmonyPatch]
 internal static class PreventMethods
 {
-    private static System.Collections.Generic.IEnumerable<MethodBase> TargetMethods()
+    private static IEnumerable<MethodBase> TargetMethods()
     {
         yield return AccessTools.Method(typeof(Btd6Player), nameof(Btd6Player.BossEventBestRound));
         yield return AccessTools.Method(typeof(Btd6Player), nameof(Btd6Player.CompleteBossEvent));

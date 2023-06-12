@@ -1,13 +1,12 @@
+using BossRounds;
+using BTD_Mod_Helper;
+using BTD_Mod_Helper.Extensions;
+using BTD_Mod_Helper.UI.Modded;
+using Il2Cpp;
 using Il2CppAssets.Scripts.Unity.Menu;
 using Il2CppAssets.Scripts.Unity.UI_New.Main.DifficultySelect;
 using Il2CppAssets.Scripts.Unity.UI_New.Main.ModeSelect;
 using MelonLoader;
-using BTD_Mod_Helper;
-using BossRounds;
-using BTD_Mod_Helper.Extensions;
-using BTD_Mod_Helper.UI.Modded;
-using Il2Cpp;
-
 [assembly: MelonInfo(typeof(BossRoundsMod), ModHelperData.Name, ModHelperData.Version, ModHelperData.RepoOwner)]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 
@@ -19,12 +18,12 @@ public class BossRoundsMod : BloonsTD6Mod
     public const string BossTypeKey = "BossRounds-BossType";
     public const string IsEliteKey = "BossRounds-IsElite";
 
-    public BossRoundSet? SelectedSet { get; private set; }
-
     // Not really much point in making these settings lol, people would just abuse it even more
     public const int BaseMonkeyMoneyBonus = 300;
     public const float MapModeMonkeyMoneyMult = .5f;
     public const float EliteMonkeyMoneyMult = 2;
+
+    public BossRoundSet? SelectedSet { get; private set; }
 
     public override void OnUpdate()
     {

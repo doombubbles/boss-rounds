@@ -1,5 +1,5 @@
-﻿using Il2CppAssets.Scripts.Unity.UI_New.InGame;
-using HarmonyLib;
+﻿using HarmonyLib;
+using Il2CppAssets.Scripts.Unity.UI_New.InGame;
 
 namespace BossRounds.Patches;
 
@@ -10,8 +10,6 @@ namespace BossRounds.Patches;
 internal static class InGame_RemoveCurrentMapSave
 {
     [HarmonyPrefix]
-    private static bool Prefix(bool canClearCheckpoints)
-    {
-        return !(canClearCheckpoints && InGameData.CurrentGame.gameEventId == BossRoundsMod.EventId);
-    }
+    private static bool Prefix(bool canClearCheckpoints) =>
+        canClearCheckpoints || InGameData.CurrentGame.gameEventId != BossRoundsMod.EventId;
 }

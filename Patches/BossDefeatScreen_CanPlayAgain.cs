@@ -1,6 +1,6 @@
-﻿using Il2CppAssets.Scripts.Unity.UI_New.GameOver;
+﻿using HarmonyLib;
+using Il2CppAssets.Scripts.Unity.UI_New.GameOver;
 using Il2CppAssets.Scripts.Unity.UI_New.InGame;
-using HarmonyLib;
 
 namespace BossRounds.Patches;
 
@@ -18,6 +18,7 @@ internal static class BossDefeatScreen_CanPlayAgain
             __result = true;
             return false;
         }
+
         return true;
     }
 }

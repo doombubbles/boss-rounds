@@ -1,1 +1,3 @@
-- Fixed for BTD6 v37.0
+- Fixed crash that could happen when trying to load the victory screen
+- Fixed extraneous error on boss defeat screen
+- Fixed saves not correctly completing on victory / defeat

@@ -1,6 +1,6 @@
-﻿using Il2CppAssets.Scripts.Models.ServerEvents;
+﻿using HarmonyLib;
+using Il2CppAssets.Scripts.Models.ServerEvents;
 using Il2CppAssets.Scripts.Unity.UI_New.InGame;
-using HarmonyLib;
 
 namespace BossRounds.Patches;
 

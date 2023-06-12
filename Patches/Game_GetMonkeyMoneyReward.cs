@@ -1,14 +1,13 @@
-﻿using Il2CppAssets.Scripts.Data;
+﻿using BTD_Mod_Helper.Api.Helpers;
+using BTD_Mod_Helper.Extensions;
+using BTD_Mod_Helper.UI.Modded;
+using HarmonyLib;
 using Il2CppAssets.Scripts.Models;
 using Il2CppAssets.Scripts.Models.Difficulty;
 using Il2CppAssets.Scripts.Unity;
 using Il2CppAssets.Scripts.Unity.Menu;
 using Il2CppAssets.Scripts.Unity.UI_New.InGame;
 using Il2CppAssets.Scripts.Unity.UI_New.Main.DifficultySelect;
-using BTD_Mod_Helper.Api.Helpers;
-using BTD_Mod_Helper.Extensions;
-using BTD_Mod_Helper.UI.Modded;
-using HarmonyLib;
 
 namespace BossRounds.Patches;
 
@@ -23,11 +22,12 @@ internal static class Game_GetMonkeyMoneyReward
     {
         bool elite;
 
-        if (InGameData.CurrentGame is { gameEventId: BossRoundsMod.EventId } data)
+        if (InGameData.CurrentGame is { gameEventId: BossRoundsMod.EventId } data && InGame.instance != null)
         {
             elite = data.bossData.bossEliteMode;
         }
-        else if (InGame.instance == null && RoundSetChanger.RoundSetOverride != null &&
+        else if (InGame.instance == null &&
+                 RoundSetChanger.RoundSetOverride != null &&
                  BossRoundSet.Cache.TryGetValue(RoundSetChanger.RoundSetOverride, out var bossRoundset))
         {
             elite = bossRoundset.elite;

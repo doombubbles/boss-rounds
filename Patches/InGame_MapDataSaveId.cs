@@ -1,5 +1,5 @@
-using Il2CppAssets.Scripts.Unity.UI_New.InGame;
 using HarmonyLib;
+using Il2CppAssets.Scripts.Unity.UI_New.InGame;
 
 namespace BossRounds.Patches;
 

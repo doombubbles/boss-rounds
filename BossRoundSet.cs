@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Il2CppAssets.Scripts.Data.Boss;
 using BTD_Mod_Helper.Api;
 using BTD_Mod_Helper.Api.Bloons;
 using BTD_Mod_Helper.Api.Enums;
+using Il2CppAssets.Scripts.Data.Boss;
 
 namespace BossRounds;
 
 /// <summary>
-/// Round set for enabling a specific boss. Automatically loads from the different values of <see cref="BossType"/>
+/// Round set for enabling a specific boss. Automatically loads from the different values of <see cref="BossType" />
 /// </summary>
 public class BossRoundSet : ModRoundSet
 {
@@ -17,16 +17,6 @@ public class BossRoundSet : ModRoundSet
 
     public readonly BossType bossType;
     public readonly bool elite;
-
-    public override string BaseRoundSet => RoundSetType.Default;
-    public override int DefinedRounds => BaseRounds.Count;
-
-    public override string Name => (elite ? "Elite" : "") + bossType;
-
-    public override string Icon =>
-        VanillaSprites.ByName.TryGetValue(bossType + "Btn" + (elite ? "Elite" : ""), out var icon)
-            ? icon
-            : VanillaSprites.WoodenRoundButton;
 
     // ReSharper disable once UnusedMember.Global gotta have empty constructor for any ModContent
     public BossRoundSet()
@@ -38,6 +28,16 @@ public class BossRoundSet : ModRoundSet
         this.bossType = bossType;
         this.elite = elite;
     }
+
+    public override string BaseRoundSet => RoundSetType.Default;
+    public override int DefinedRounds => BaseRounds.Count;
+
+    public override string Name => (elite ? "Elite" : "") + bossType;
+
+    public override string Icon =>
+        VanillaSprites.ByName.TryGetValue(bossType + "Btn" + (elite ? "Elite" : ""), out var icon)
+            ? icon
+            : VanillaSprites.WoodenRoundButton;
 
     /// <summary>
     /// Load a BossRoundSet for each boss type / eliteness

@@ -1,11 +1,9 @@
-﻿using Il2CppAssets.Scripts.Models.Profile;
+﻿using HarmonyLib;
+using Il2CppAssets.Scripts.Models.Profile;
 using Il2CppAssets.Scripts.Unity;
 using Il2CppAssets.Scripts.Unity.UI_New.GameOver;
 using Il2CppAssets.Scripts.Unity.UI_New.InGame;
-using BTD_Mod_Helper;
-using HarmonyLib;
 using Il2CppSystem.Collections.Generic;
-using MelonLoader;
 
 namespace BossRounds.Patches;
 
@@ -19,15 +17,21 @@ internal static class BossDefeatScreen_Open
     private static void Prefix(BossDefeatScreen __instance, ref BossEventData __state)
     {
         if (InGameData.CurrentGame.gameEventId != BossRoundsMod.EventId) return;
-            
+
         __state = Game.Player.Data._CurrentBossEventData_k__BackingField;
-            
+
         Game.Player.Data._CurrentBossEventData_k__BackingField = new BossEventData
         {
             elite = new BossModeData
-                { hasCompleted = true, seenCompletion = true, tierBeaten = 5, newBestRound = false },
+            {
+                highestCompletedRound = 69, hasCompleted = true, seenCompletion = true, tierBeaten = 5,
+                newBestRound = false
+            },
             normal = new BossModeData
-                { hasCompleted = true, seenCompletion = true, tierBeaten = 5, newBestRound = false },
+            {
+                highestCompletedRound = 69, hasCompleted = true, seenCompletion = true, tierBeaten = 5,
+                newBestRound = false
+            },
             eventId = BossRoundsMod.EventId,
             leaderboardStandings = new List<BossLeaderboardStanding>(),
             hasClaimedRewards = true
@@ -45,7 +49,7 @@ internal static class BossDefeatScreen_Open
     private static void Postfix(BossDefeatScreen __instance, ref BossEventData __state)
     {
         if (InGameData.CurrentGame.gameEventId != BossRoundsMod.EventId) return;
-            
+
         Game.Player.Data._CurrentBossEventData_k__BackingField = __state;
         __instance.bestRoundTxt.SetText("n/a");
     }

@@ -3,7 +3,7 @@ namespace BossRounds;
 public static class ModHelperData
 {
     public const string WorksOnVersion = "37.0";
-    public const string Version = "1.0.7";
+    public const string Version = "1.0.8";
     public const string Name = "Boss Rounds";
 
     public const string Description =

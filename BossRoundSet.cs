@@ -4,7 +4,11 @@ using System.Linq;
 using BTD_Mod_Helper.Api;
 using BTD_Mod_Helper.Api.Bloons;
 using BTD_Mod_Helper.Api.Enums;
+using BTD_Mod_Helper.Extensions;
 using Il2CppAssets.Scripts.Data.Boss;
+using Il2CppAssets.Scripts.Models.Rounds;
+using Il2CppAssets.Scripts.Models.ServerEvents;
+using Il2CppAssets.Scripts.Unity;
 
 namespace BossRounds;
 
@@ -14,6 +18,8 @@ namespace BossRounds;
 public class BossRoundSet : ModRoundSet
 {
     public static readonly Dictionary<string, BossRoundSet> Cache = new();
+    public static readonly Dictionary<BossType, BossRoundSet> NormalCache = new();
+    public static readonly Dictionary<BossType, BossRoundSet> EliteCache = new();
 
     public readonly BossType bossType;
     public readonly bool elite;
@@ -52,9 +58,40 @@ public class BossRoundSet : ModRoundSet
         }
     }
 
+    private readonly Dictionary<int, RoundInfo> roundInfos = new();
+
     public override void Register()
     {
+        foreach (var round in SkuSettings.instance.gameEvents.roundSets[bossType.ToString().ToLower()].rounds)
+        {
+            roundInfos[round.roundNumber] = round;
+        }
         base.Register();
         Cache[Id] = this;
+        var cache = elite ? EliteCache : NormalCache;
+        cache[bossType] = this;
+    }
+
+    public override void ModifyRoundModels(RoundModel roundModel, int round)
+    {
+        if (!roundInfos.TryGetValue(round + 1, out var roundInfo)) return;
+
+        var groups = roundInfo.bloonGroups.ToArray()
+            .Select(group => new BloonGroupModel("", group.bloon, group.start, group.End, group.count))
+            .ToArray();
+
+        if (roundInfo.addToRound)
+        {
+            roundModel.groups = roundModel.groups.Concat(groups).ToArray();
+            roundModel.AddChildDependants(groups);
+        }
+        else
+        {
+            roundModel.RemoveChildDependants(roundModel.groups);
+            roundModel.groups = groups;
+            roundModel.AddChildDependants(groups);
+        }
+
+        roundModel.emissions_ = null;
     }
 }

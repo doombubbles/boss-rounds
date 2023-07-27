@@ -19,7 +19,7 @@ internal static class SkuSettings_GetEvent
     [HarmonyPrefix]
     private static bool Prefix(ref object __result)
     {
-        if (InGameData.CurrentGame.gameEventId != BossRoundsMod.EventId) return true;
+        if (InGameData.CurrentGame == null || InGameData.CurrentGame.gameEventId != BossRoundsMod.EventId) return true;
 
         var bossData = InGameData.CurrentGame.bossData;
 

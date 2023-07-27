@@ -1,11 +1,18 @@
+using System;
 using BossRounds;
 using BTD_Mod_Helper;
 using BTD_Mod_Helper.Extensions;
 using BTD_Mod_Helper.UI.Modded;
 using Il2Cpp;
+using Il2CppAssets.Scripts.Data;
+using Il2CppAssets.Scripts.Models;
+using Il2CppAssets.Scripts.Models.ServerEvents;
+using Il2CppAssets.Scripts.Unity;
 using Il2CppAssets.Scripts.Unity.Menu;
+using Il2CppAssets.Scripts.Unity.UI_New.InGame;
 using Il2CppAssets.Scripts.Unity.UI_New.Main.DifficultySelect;
 using Il2CppAssets.Scripts.Unity.UI_New.Main.ModeSelect;
+using Il2CppSystem.Threading.Tasks;
 using MelonLoader;
 [assembly: MelonInfo(typeof(BossRoundsMod), ModHelperData.Name, ModHelperData.Version, ModHelperData.RepoOwner)]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
@@ -24,6 +31,14 @@ public class BossRoundsMod : BloonsTD6Mod
     public const float EliteMonkeyMoneyMult = 2;
 
     public BossRoundSet? SelectedSet { get; private set; }
+
+    public override void OnNewGameModel(GameModel gameModel)
+    {
+        if (InGameData.CurrentGame.gameEventId == EventId)
+        {
+            gameModel.endRound = 140;
+        }
+    }
 
     public override void OnUpdate()
     {

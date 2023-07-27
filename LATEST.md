@@ -1,3 +1,2 @@
-- Fixed crash that could happen when trying to load the victory screen
-- Fixed extraneous error on boss defeat screen
-- Fixed saves not correctly completing on victory / defeat
+- Fixed v38 issue of losing at the end of the chosen difficulty's normal final round
+- Boss Round Sets now properly include the same round changes that the Boss Events usually do

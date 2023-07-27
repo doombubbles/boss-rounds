@@ -76,10 +76,8 @@ public class BossRoundSet : ModRoundSet
     {
         if (!roundInfos.TryGetValue(round + 1, out var roundInfo)) return;
 
-        var groups = roundInfo.bloonGroups.ToArray()
-            .Select(group => new BloonGroupModel("", group.bloon, group.start, group.End, group.count))
-            .ToArray();
-
+        var groups = roundInfo.GetRoundDef(1f).groups;
+        
         if (roundInfo.addToRound)
         {
             roundModel.groups = roundModel.groups.Concat(groups).ToArray();

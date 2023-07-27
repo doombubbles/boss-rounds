@@ -1,2 +1,1 @@
-- Fixed v38 issue of losing at the end of the chosen difficulty's normal final round
-- Boss Round Sets now properly include the same round changes that the Boss Events usually do
+- Fixed issue with bosses' round modifications being too clumped

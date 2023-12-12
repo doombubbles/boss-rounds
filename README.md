@@ -1,3 +1,11 @@
+
+# BTD6 v40 Notification
+
+**I have currently hidden Boss Rounds from the Mod Browser for the moment until a workaround can be found for v40.**
+**A core feature of the mod, being able to save the Boss Rounds games to the map's save slots, has been made seemingly unpatchable as a side effect of v40, and without that the main functionality of the mod won't be operational.**
+
+**Until a workaround can be found, stick with the new official Boss Challenges that NK has added.**
+
 <a href="https://github.com/doombubbles/boss-rounds/releases/latest/download/BossRounds.dll">
     <img align="left" alt="Icon" height="90" src="Icon.png">
     <img align="right" alt="Download" height="75" src="https://raw.githubusercontent.com/gurrenm3/BTD-Mod-Helper/master/BloonsTD6%20Mod%20Helper/Resources/DownloadBtn.png">
